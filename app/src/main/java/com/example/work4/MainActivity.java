@@ -1,5 +1,6 @@
 package com.example.work4;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,13 +68,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        try {
+
             num1 = Float.parseFloat(number1.getText().toString());
             num2 = Float.parseFloat(number2.getText().toString());
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Введите корректные числа", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
 
         int id = v.getId();
         if (id == R.id.buttonadd) {
@@ -98,5 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             result.setText("");
         }
         result.setText(res + "");
+    }
+    public void dop(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+        finish();
     }
 }
